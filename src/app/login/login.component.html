@@ -1,0 +1,27 @@
+<div class="">
+  <span class="">LOGIN</span>
+  <form class="" [formGroup]="loginForm" (submit)="onLoginSubmit()">
+    <div class="">
+      <label for="username" class="">USERNAME</label>
+      <input
+        type="text"
+        id="username"
+        class=""
+        placeholder="USERNAME"
+        formControlName="username"
+      />
+    </div>
+    <div class="">
+      <label for="password" class="">PASSWORD</label>
+      <input
+        type="password"
+        id="password"
+        class=""
+        placeholder="PASSWORD"
+        formControlName="password"
+      />
+    </div>
+    <button type="submit">LOGIN</button>
+  </form>
+  <a [routerLink]="['/password-recovery']" class="">RECOVER YOUR PASSWORD</a>
+</div>
