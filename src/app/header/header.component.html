@@ -1,4 +1,14 @@
-<div class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between shadow">
-  <span class="fs-5 fw-semibold text-white">Olá, {{ username }}!</span>
-  <button (click)="onLogout()" class="btn btn-danger py-1 px-2 fs-6 fw-semibold">LOGOUT</button>
-</div>
+<header
+  class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between"
+>
+  <p class="fs-5 fw-regular text-white p-0 m-0">
+    Olá, <span class="fw-semibold">{{ username }}</span
+    >!
+  </p>
+  <button
+    (click)="onLogout()"
+    class="btn btn-danger py-1 px-2 fs-6 fw-semibold"
+  >
+    LOGOUT
+  </button>
+</header>
