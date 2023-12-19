@@ -1,5 +1,5 @@
 import { Injectable, Input } from '@angular/core';
-import { IUserLogin } from './userdata';
+import { IUserData, IUserLogin } from './userdata';
 
 @Injectable({
   providedIn: 'root',
@@ -7,17 +7,16 @@ import { IUserLogin } from './userdata';
 export class LoginService {
   constructor() {}
 
-  userData: IUserLogin = {
+  userData: IUserData = {
     username: '',
-    password: '',
     isLogged: false,
   };
 
-  updateUserData(data: IUserLogin) {
+  updateUserData(data: IUserData) {
     localStorage.setItem('userData', JSON.stringify({ ...data }));
   }
 
-  setUserData(username: string, password: string) {
+  setUserData({ username, password }: IUserLogin) {
     if (!username || !password) return;
     this.userData.username = username;
     this.userData.isLogged = true;
@@ -26,11 +25,10 @@ export class LoginService {
 
   getUserData() {
     const storedUserData = localStorage.getItem('userData');
-    const data: IUserLogin = storedUserData
+    const data: IUserData = storedUserData
       ? JSON.parse(storedUserData)
       : {
           username: '',
-          password: '',
           isLogged: false,
         };
     this.userData = data;
@@ -40,7 +38,6 @@ export class LoginService {
   removeUserData() {
     this.userData = {
       username: '',
-      password: '',
       isLogged: false,
     };
     this.updateUserData(this.userData);

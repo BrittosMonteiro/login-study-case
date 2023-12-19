@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { IUserLogin } from '../userdata';
 import { LoginService } from '../login.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -21,10 +20,10 @@ export class LoginComponent {
   });
 
   onLoginSubmit() {
-    this.loginService.setUserData(
-      this.loginForm.value.username ?? '',
-      this.loginForm.value.password ?? ''
-    );
+    this.loginService.setUserData({
+      username: this.loginForm.value.username ?? '',
+      password: this.loginForm.value.password ?? '',
+    });
     this.router.navigate(['/dashboard']);
   }
 }

@@ -1,27 +1,45 @@
-<div class="">
-  <span class="">LOGIN</span>
-  <form class="" [formGroup]="loginForm" (submit)="onLoginSubmit()">
-    <div class="">
-      <label for="username" class="">USERNAME</label>
-      <input
-        type="text"
-        id="username"
-        class=""
-        placeholder="USERNAME"
-        formControlName="username"
-      />
-    </div>
-    <div class="">
-      <label for="password" class="">PASSWORD</label>
-      <input
-        type="password"
-        id="password"
-        class=""
-        placeholder="PASSWORD"
-        formControlName="password"
-      />
-    </div>
-    <button type="submit">LOGIN</button>
-  </form>
-  <a [routerLink]="['/password-recovery']" class="">RECOVER YOUR PASSWORD</a>
+<div
+  class="container mx-auto w-100 h-100 d-flex justify-content-center align-items-center row"
+>
+  <div
+    class="d-flex flex-column bg-secondary border-1 gap-4 p-4 rounded-1 bg-black shadow-lg col-sm-12 col-md-10 col-lg-6 col-xl-4"
+  >
+    <span class="text-white fw-semibold">LOGIN</span>
+    <form
+      class="d-flex flex-column gap-4"
+      [formGroup]="loginForm"
+      (submit)="onLoginSubmit()"
+    >
+      <div class="col">
+        <label for="username" class="form-label fw-light text-white"
+          >USERNAME</label
+        >
+        <input
+          type="text"
+          id="username"
+          class="form-control rounded-1 px-2 py-1 border-0 fw-normal"
+          placeholder="USERNAME"
+          formControlName="username"
+        />
+      </div>
+      <div class="">
+        <label for="password" class="form-label fw-light text-white"
+          >PASSWORD</label
+        >
+        <input
+          type="password"
+          id="password"
+          class="form-control rounded-1 px-2 py-1 border-0 fw-normal"
+          placeholder="PASSWORD"
+          formControlName="password"
+        />
+      </div>
+      <button type="submit" class="btn btn-danger">LOGIN</button>
+    </form>
+    <a
+      [routerLink]="['/password-recovery']"
+      class="text-decoration-none link-light fs-6"
+      >RECOVER YOUR PASSWORD</a
+    >
+  </div>
 </div>
